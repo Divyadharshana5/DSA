@@ -4,8 +4,6 @@ const isAnagram1 = function (s, t) {
 
   return s === t;
 };
-isAnagram();
-
 //anagram => ["a","n","a","g","r","a","m"] => [a,a,a,g,m,n,r] =>aaagmnr
 //nagaram => ["n","a","g","a","r","a","m"] => [a,a,a,g,m,n,r] =>aaagmnr
 
@@ -17,8 +15,11 @@ const isAnagram = function (s, t) {
 
   for (let i = 0; i < s.length; i++) {
     obj1[s[i]] = (obj1[s[i]] || 0) + 1;
-    obj1[t[i]] = (obj1[t[i]] || 0) + 1;
+    obj2[t[i]] = (obj2[t[i]] || 0) + 1;
   }
-  for (const key in object) {
+  for (const key in obj1) {
+    if (obj1[key] !== obj2[key]) return false;
   }
+  return true;
 };
+console.log(isAnagram("anagram", "nagaram"));
