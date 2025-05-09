@@ -6,4 +6,4 @@ var fib = function (n) {
   }
   console.log(arr);
 };
-fib();
+fib(10);
