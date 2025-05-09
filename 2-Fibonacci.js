@@ -4,6 +4,6 @@ var fib = function (n) {
   for (let i = 2; i <= n; i++) {
     arr.push(arr[i - 1] + arr[i - 2]);
   }
-  console.log(arr);
+  console.log(arr[n]);
 };
 fib(10);
