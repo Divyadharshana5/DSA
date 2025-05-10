@@ -12,4 +12,16 @@ function maxProfit(prices) {
 }
 //console.log(maxProfit([7, 1, 5, 3, 6, 4]));
 
-const maxProfit = function (prices) {};
+const maxProfit = function (prices) {
+  let minStockPurchasePrice = prices[0] || 0;
+  let profit = 0;
+
+  for (let i = 0; i < prices.length; i++) {
+    if (prices[i < minStockPurchasePrice]) {
+      minStockPurchasePrice = prices[i];
+    }
+
+    let currentProfit = prices[i] - minStockPurchasePrice;
+    profit = Math.max(profit, currentProfit);
+  }
+};
